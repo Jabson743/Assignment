@@ -6,7 +6,7 @@ public class PrimeNumber {
        System.out.print("Enter a positive integer: ");
        int number = input.nextInt();
 
-       if (number >= 2 && number / Math.sqrt(number) != 1) {
+       if (number % 2 != 0 && number / 2 != 0) {
           System.out.println(number + " is a prime number");
           }
 
