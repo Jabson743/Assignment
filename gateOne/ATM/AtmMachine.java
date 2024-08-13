@@ -124,15 +124,16 @@ public class AtmMachine {
               amount = input.nextDouble();
               System.out.println();
               if(amount > balance) {
-              amount -= balance;
               System.out.println("==================");
               System.out.println("Insufficient funds");
               System.out.println("==================");
               }
               else {
+              balance -= amount;
               System.out.println("===================");
               System.out.println("Transfer Successful");
               System.out.println("===================");
+ 
               }
 	   }
            else {

@@ -28,8 +28,8 @@ public class MenstrualCycle {
                 int cycleLength = input.nextInt();
                 System.out.println();
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd -MM -yyyy");
-/. 
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
 		LocalDate lastFlowDatePeriod = LocalDate.parse(lastFlowDate, formatter);
 		
 		LocalDate nextMenstrualFlow = lastFlowDatePeriod.plusDays(cycleLength);
