@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class SumAverage {
+       public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+
+       System.out.print("Enter the value of your number: ");
+       int number1 = input.nextInt();
+
+       System.out.print("Enter the value of your number: ");
+       int number2 = input.nextInt();  
+
+       System.out.print("Enter the value of your number: ");
+       int number3 = input.nextInt();   
+
+       System.out.print("Enter the value of your number: ");
+       int number4 = input.nextInt();  
+
+       System.out.print("Enter the value of your number: ");
+       int number5 = input.nextInt();
+
+       System.out.print("Enter the value of your number: ");
+       int number6 = input.nextInt();
+
+       System.out.print("Enter the value of your number: ");
+       int number7 = input.nextInt();
+ 
+       System.out.print("Enter the value of your number: ");
+       int number8 = input.nextInt();
+
+       System.out.print("Enter the value of your number: ");
+       int number9 = input.nextInt();
+
+       System.out.print("Enter the value of your number: ");
+       int number10 = input.nextInt();
+
+       sum = number1 + number2 + number3 + number4 + number5 + number6 + number7 + number8 + number9 + number10;
+
+       average = sum / 10;
+
+       System.out.println("The sum of the numbers is %d%n", sum);
+       System.out.println("The average of the number is %d%n", average);
+          
+  }
+}
