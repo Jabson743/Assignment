@@ -20,7 +20,7 @@ public class MenstrualCycle {
 		System.out.println("Assumed Length Of Cycle Is Between 21 - 35 Days");
 		System.out.println();
 		
-		System.out.print("Enter The Date Of Your Last Menstrual Flow: ");	
+		System.out.print("Enter The Date, Month And Year Of Your Last Menstrual Flow: ");	
 		String lastFlowDate = input.nextLine();
                 System.out.println();
 
@@ -35,16 +35,19 @@ public class MenstrualCycle {
 		LocalDate nextMenstrualFlow = lastFlowDatePeriod.plusDays(cycleLength);
 
 		System.out.print("Your Next Menstrual Flow Starts On: " + nextMenstrualFlow);
+                System.out.println();
 
 		LocalDate ovulationDate = lastFlowDatePeriod.plusDays(cycleLength / 2);
 
 		System.out.print("\nYour Ovulation Date Is: " + ovulationDate + "\n");
+                System.out.println();
 
 		LocalDate fertilePeriodStart = ovulationDate.minusDays(7);
 
         	LocalDate fertilePeriodEnd = ovulationDate.plusDays(2);
 
 		System.out.print("Your Fertile Period Is Between : " + ovulationDate.minusDays(7) + " - " + ovulationDate.plusDays(2) +"\n");
+                System.out.println();
 
 		LocalDate safePeriodStart = ovulationDate.plusDays(5);
 

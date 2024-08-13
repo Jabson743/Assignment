@@ -1,38 +1,50 @@
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class AtmMachine {  
        public static void main(String... args) {
-       Scanner input = new Scanner(System.in);
-       
+       Scanner input = new Scanner(System.in); 
+       Random random = new Random();
+
        double amount = 0.0;
        double balance = 0.0;
+
+       ArrayList<String> customerAccountNumber = new ArrayList<>();
+
+       String accountNumber = " ";
+
+       for (int count = 0; count < 10; count++) {
+             int accountGenerator = random.nextInt(9);
+             accountNumber += String.valueOf(accountGenerator);
+           }
+
        System.out.println("***********************************************");
        System.out.println("Welcome To GT Bank. Banking At Your Convenience");
        System.out.println("***********************************************");
 
        System.out.println("Create An Account");
        System.out.print("Enter Your First Name: ");
-       String firstName = input.next();
+       String firstName  = input.nextLine();
 
        System.out.print("Enter Your Last Name: ");
-       String lastName = input.next();
+       String lastName = input.nextLine();
 
        System.out.print("Enter Your Four Digits Pin: ");
-       String pinNumber = input.next();
+       String pinNumber = input.nextLine();
 
-       System.out.println("=================================================");
+       System.out.println("=========================================================================================");
        System.out.println("Pin Created. You Now Have Access To Your Account.");
-       System.out.println("Dear " + firstName + " " + lastName + " Your Account Is Successfully Created");
-       System.out.println("=================================================");
+       System.out.println("Dear " + firstName + " " + lastName + " Your Account Is Successfully Created With The Account Number: " + accountNumber);
+       System.out.println("=========================================================================================");
        System.out.println();
 
        System.out.print("Press 1 To Get Started Or (-1) To Quit: ");
        int number = input.nextInt();
 
-       if(number == -1) {
+       if(number != 1) {
           System.exit(0);
        }
-	
+       
        boolean continueTransaction = true; 
 
        while (true) {
@@ -58,6 +70,7 @@ public class AtmMachine {
                System.out.println("LastName: " + lastName);
                System.out.println("======================================");
                System.out.println("Welcome " + firstName + " " + lastName + " To GT Bank");
+               System.out.println("Account Number:" + accountNumber);
                System.out.println("======================================");
                break;   
             
@@ -65,6 +78,12 @@ public class AtmMachine {
 	       System.out.println("Deposit Money");
                System.out.print("Enter The Amount You Want To Deposit: ");
                amount = input.nextDouble();
+               if(amount < 0) { 
+               System.out.println("======================");
+               System.out.println("Invalid Deposit Amount");
+               System.out.println("======================");
+               }
+               else {
                balance += amount;
                System.out.println("=============================================================");
                System.out.println("You Have Just Successfully Deposited " + amount + " " + "Into Your Account");
@@ -73,6 +92,7 @@ public class AtmMachine {
                System.out.println("========================================");
                System.out.println("Your Current Account Balance Is " + balance);
                System.out.println("========================================");
+               }
                break;
 
        case 3: 
@@ -174,8 +194,7 @@ public class AtmMachine {
               System.out.println("Invalid Code. Kindly Enter A Valid Code");
               System.out.println("=======================================");
               break;
-       }
-              
+       }           
               if(continueTransaction == true) {
               System.out.println("Do You Wish To Perform Another Transaction!!! (yes/no)");
               String reply = input.next();
@@ -183,10 +202,12 @@ public class AtmMachine {
               continue;
               }
               else {
+              System.out.println("*****************************");
               System.out.println("Thanks For Banking With Us!!!");
+              System.out.println("*****************************");
               break;
               }        
-            }
+        }
+     }
   }
- }
 }
